@@ -20,7 +20,8 @@ None
 
 | Variable             | Default     | Comments (type)                                   |
 | :---                 | :---        | :---                                              |
-| hibernation | true | |
+| hibernation | false | |
+| standby_disable | true | |
 
 ## Dependencies
 
@@ -35,6 +36,10 @@ None
 ```
 
 ## Changelog
+
+### 1.1.0
+
+* add Support for standby disable
 
 ### 1.0.0
 

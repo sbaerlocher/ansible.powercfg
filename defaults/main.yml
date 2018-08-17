@@ -1,4 +1,5 @@
 ---
 # defaults file for sbaerlocher.powercfg
 
-hibernation: true
+hibernation_disable: false
+standby_disable: true
