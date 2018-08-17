@@ -1,5 +1,6 @@
 ---
 # defaults file for sbaerlocher.powercfg
 
-hibernation_disable: false
-standby_disable: true
+powercfg_hibernation_disable: false
+powercfg_standby_ac_disable: true
+powercfg_standby_ac_time: 20
