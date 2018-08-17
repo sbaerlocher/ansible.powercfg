@@ -20,8 +20,9 @@ None
 
 | Variable             | Default     | Comments (type)                                   |
 | :---                 | :---        | :---                                              |
-| hibernation | false | |
-| standby_disable | true | |
+| powercfg_hibernation_disable | false | |
+| powercfg_standby_ac_disable | true | |
+| powercfg_standby_ac_time | 20 | |
 
 ## Dependencies
 
