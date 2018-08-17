@@ -3,8 +3,16 @@
 
 - name: disable hibernation
   win_shell: powercfg.exe /hibernate off
-  when: not hibernation
+  when: hibernation_disable
 
 - name: enable hibernation
   win_shell: powercfg.exe /hibernate on
-  when: hibernation
+  when: not hibernation_disable
+
+- name: disable standby
+  win_shell: powercfg -change -standby-timeout-ac 0
+  when: standby_disable
+
+- name: enable standby
+  win_shell: powercfg -change -standby-timeout-ac 20
+  when: not standby_disable
