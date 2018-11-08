@@ -1,18 +1,23 @@
 ---
 # tasks file for sbaerlocher.powercfg
 
-- name: disable hibernation
-  win_shell: powercfg.exe /hibernate off
-  when: powercfg_hibernation_disable
+- block:
 
-- name: enable hibernation
-  win_shell: powercfg.exe /hibernate on
-  when: not powercfg_hibernation_disable
+  - name: disable hibernation
+    win_shell: powercfg.exe /hibernate off
+    when: powercfg_hibernation_disable
 
-- name: disable standby
-  win_shell: powercfg -change -standby-timeout-ac 0
-  when: powercfg_standby_ac_disable
+  - name: enable hibernation
+    win_shell: powercfg.exe /hibernate on
+    when: not powercfg_hibernation_disable
 
-- name: enable standby
-  win_shell: "powercfg -change -standby-timeout-ac {{ powercfg_standby_ac_time }}"
-  when: not powercfg_standby_ac_disable
+  - name: disable standby
+    win_shell: powercfg -change -standby-timeout-ac 0
+    when: powercfg_standby_ac_disable
+
+  - name: enable standby
+    win_shell: "powercfg -change -standby-timeout-ac {{ powercfg_standby_ac_time }}"
+    when: not powercfg_standby_ac_disable
+
+  when: >
+    not (ansible_system_vendor == "QEMU")
