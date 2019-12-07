@@ -38,6 +38,10 @@ None
 
 ## Changelog
 
+### 1.2.0
+
+- Compatible with 2.9.0
+
 ### 1.1.0
 
 - add Support for standby disable
